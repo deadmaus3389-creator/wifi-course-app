@@ -1,1 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wi‑Fi курс (офлайн)</title>
 
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b1020" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Wi‑Fi и радиосигнал</h1>
+    <p class="muted">Общий курс: понимание, настройки, тонкости (без сервера)</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Прогресс</h2>
+      <div id="progressText" class="muted"></div>
+      <div class="progress">
+        <div id="progressBar" class="progress__bar"></div>
+      </div>
+
+      <div class="row" style="margin-top:10px; gap:8px; flex-wrap:wrap;">
+        <button id="resetBtn" class="btn btn--ghost">Сбросить прогресс</button>
+        <button id="exportBtn" class="btn btn--ghost">Экспорт прогресса</button>
+
+        <label class="btn btn--ghost" style="cursor:pointer;">
+          Импорт прогресса
+          <input id="importFile" type="file" accept="application/json" style="display:none;">
+        </label>
+      </div>
+
+      <p class="muted" style="margin-top:10px;">
+        Подсказка: на телефоне открой курс в браузере → меню → “Добавить на главный экран”.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Уроки</h2>
+      <div id="lessonsList" class="list"></div>
+    </section>
+  </main>
+
+  <script src="lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
